@@ -1,0 +1,56 @@
+# Archivos ejecutables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Archivos de compilación
+*.o
+*.obj
+.env
+go.sum
+
+# Archivos generados por el compilador
+/_obj/
+/cmd/tmp/
+
+/_test/
+
+# Directorio de dependencias
+/vendor/
+
+# Archivos de registro
+/log/
+
+
+
+# Archivos de datos
+/data/
+
+# Archivos de respaldo
+*.bak
+*.swp
+*~
+
+# Archivos de caché
+.cache/
+
+# Archivos de documentación
+/doc/
+/docs/
+
+# Archivos de prueba
+/test/
+/tests/
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
