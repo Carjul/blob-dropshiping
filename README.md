@@ -12,8 +12,8 @@
 1. **Clona el Repositorio:**
 
     ```sh
-    git clone https://github.com/tuusuario/myproject.git
-    cd myproject
+    git clone https://github.com/Carjul/blob-dropshiping.git
+    cd blob-dropshiping
     ```
 
 2. **Instala las Dependencias:**
@@ -27,8 +27,8 @@
     Crea un archivo `.env` en el directorio raíz del proyecto y añade las siguientes variables:
 
     ```sh
-    MONGO_URI=mongodb://localhost:27017
-    MONGO_DB=mydatabase
+    URI=mongodb://localhost:27017
+    PORT=8080
     ```
 
 4. **Construye y Ejecuta la Aplicación:**
