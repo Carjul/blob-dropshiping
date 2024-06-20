@@ -7,7 +7,9 @@ import (
 )
 
 func SetupRoutes(r *gin.Engine) {
-    r.GET("/", HomeHandler)
+    r.GET("/", IndexHandler)
+    r.GET("/home", HomeHandler)
+    r.GET("/about", AboutHandler)
     r.GET("/articulos", GetArticulosHandler)
     r.POST("/articulo", CreateArticuloHandler)
     r.GET("/articulo/:id", GetArticuloHandler)
