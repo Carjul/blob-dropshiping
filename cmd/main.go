@@ -3,13 +3,19 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	. "github.com/Carjul/web-service-gin/internal/routes"
-	
+	. "github.com/Carjul/web-service-gin/config"
+	"github.com/joho/godotenv"
 	"log"
+	"os"
 
 
 )
 
 func main() {
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found")
+	}
+	PORT := os.Getenv("PORT")
     r := gin.Default()
 
 	r.Static("/public", "../public")
@@ -18,7 +24,17 @@ func main() {
 	
     SetupRoutes(r) 
 
-    if err := r.Run(":8080"); err != nil {
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found")
+	}
+
+	
+	if err := Dbconect(); err != nil {
+		log.Fatalf("Error connecting to MongoDB: %v", err)
+	}
+	defer DesconectarDB()
+
+    if err := r.Run(":"+PORT); err != nil && PORT == ""{
         log.Fatalf("Error starting server: %s", err)
     }
 }
