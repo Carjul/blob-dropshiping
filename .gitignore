@@ -9,7 +9,7 @@
 *.o
 *.obj
 .env
-go.sum
+
 
 # Archivos generados por el compilador
 /_obj/
