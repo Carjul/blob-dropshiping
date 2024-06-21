@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	. "github.com/Carjul/web-service-gin/internal/routes"
 	. "github.com/Carjul/web-service-gin/config"
+	"path/filepath"
 	"github.com/joho/godotenv"
 	"log"
 	"os"
@@ -11,16 +12,24 @@ import (
 
 )
 
+func getDirname(filePath string) string {
+	return filepath.Dir(filePath)
+}
+
 func main() {
 	if err := godotenv.Load(); err != nil {
 		log.Println("No .env file found")
 	}
+
 	PORT := os.Getenv("PORT")
     r := gin.Default()
 
-	r.Static("/public", "../public")
+	basePath := "../public"
+	templatePath := filepath.Join(basePath, "templates/*")
+	staticPath := filepath.Join(basePath)
 
-	r.LoadHTMLGlob("../public/templates/*")
+	r.Static("/public", staticPath)
+	r.LoadHTMLGlob(templatePath)
 	
     SetupRoutes(r) 
 
