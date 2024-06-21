@@ -24,7 +24,7 @@ func main() {
 	PORT := os.Getenv("PORT")
     r := gin.Default()
 
-	basePath := "../public"
+	basePath := "./public"
 	templatePath := filepath.Join(basePath, "templates/*")
 	staticPath := filepath.Join(basePath)
 

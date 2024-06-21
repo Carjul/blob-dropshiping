@@ -13,7 +13,7 @@
 
 # Archivos generados por el compilador
 /_obj/
-/cmd/tmp/
+/tmp/
 
 /_test/
 
