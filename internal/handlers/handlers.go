@@ -8,11 +8,22 @@ import (
 )
 
 func HomeHandler(c *gin.Context) {
+    c.HTML(http.StatusOK, "articulo.html", gin.H{
+        "message": "Welcome to the Home Page!",
+    })
+}
+func IndexHandler(c *gin.Context) {
     c.HTML(http.StatusOK, "index.html", gin.H{
         "message": "Welcome to the Home Page!",
     })
 }
 
+func AboutHandler(c *gin.Context) {
+    c.HTML(http.StatusOK, "about.html", gin.H{
+        "message": "Welcome to the About Page!",
+    })
+
+}
 
 func GetArticulosHandler(c *gin.Context) {
     response := GetArticulos()
