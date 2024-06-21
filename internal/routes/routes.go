@@ -8,9 +8,9 @@ import (
 
 func SetupRoutes(r *gin.Engine) {
     r.GET("/", HomeHandler)
-    r.GET("/articulos", GetArticulosHandler)
-    r.POST("/articulo", CreateArticuloHandler)
-    r.GET("/articulo/:id", GetArticuloHandler)
-    r.PUT("/articulo/:id", UpdateArticuloHandler)
-    r.DELETE("/articulo/:id", DeleteArticuloHandler)
+    r.GET("/api/v1/articulos", GetArticulosHandler)
+    r.POST("/api/v1/articulo", CreateArticuloHandler)
+    r.GET("/api/v1/articulo/:id", GetArticuloHandler)
+    r.PUT("/api/v1/articulo/:id", UpdateArticuloHandler)
+    r.DELETE("/api/v1/articulo/:id", DeleteArticuloHandler)
 }
